@@ -59,6 +59,11 @@ accept with Return:
 2. **What to search for.** Keep the default profile, answer a handful of
    questions about the role, stack and place you want, **build the profile from
    your CV**, or open the file and write it yourself.
+   The default in [`profile.default.md`](profile.default.md) looks for
+   JavaScript/TypeScript developer roles — fullstack, frontend, backend or mobile,
+   any seniority — for a candidate based in Madagascar: remote-worldwide boards,
+   the French-speaking market, and Malagasy job boards, in French or English.
+   Unless that happens to describe you, pick one of the other three.
 3. **Whether to install the background agent** that runs the searches.
 4. **Whether to install the menu bar indicator.**
 

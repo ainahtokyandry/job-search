@@ -1,0 +1,18 @@
+# Personal configuration and search profile
+config.env
+profile.md
+
+# Search results, logs and runtime state
+reports/
+logs/
+.last-run
+.attempts
+.run.lock
+
+# CVs or any other personal document dropped in the folder
+*.pdf
+*.docx
+cv*
+
+# macOS
+.DS_Store

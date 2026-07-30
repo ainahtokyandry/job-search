@@ -272,14 +272,19 @@ fi
 # -------------------------------------------------------------- 5. menu bar app
 
 print
-bold "4. Install the menu bar indicator?"
+bold "4. Install a menu bar indicator of its own?"
 dim  "Shows the next run, whether one is in flight, and opens the latest report."
+dim  "Say no if you use MacBar — it already shows all of that as one of its"
+dim  "sections, and a second app here means a second item in the menu bar."
 print
-if yesno "Build and install it?" y; then
+if yesno "Build and install it?" n; then
   if ! command -v swiftc >/dev/null; then
     warn "swiftc not found — install Xcode Command Line Tools (xcode-select --install) and re-run."
+  elif ! "$PROJECT_DIR/menubar/build.sh"; then
+    # The indicator is built against the MacBar host; without it there is
+    # nothing to compile, and that must not abort the rest of the setup.
+    warn "Could not build the indicator. Everything else above is installed."
   else
-    "$PROJECT_DIR/menubar/build.sh"
     mkdir -p "$AGENTS_DIR"
     cat > "$AGENTS_DIR/$BAR_LABEL.plist" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>

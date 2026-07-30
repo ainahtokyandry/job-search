@@ -5,8 +5,8 @@ A job search that runs itself.
 Twice a week — or on whatever schedule you pick — a background agent sweeps job
 boards for openings that match your profile, keeps only the ones posted in the
 last few days, checks that you are actually eligible for them, and writes a dated
-Markdown report into `reports/`. A small menu bar indicator shows when the next
-run is due and opens the latest report in one click.
+Markdown report into `reports/`. A menu bar indicator shows when the next run is
+due and opens the latest report in one click.
 
 It runs entirely on your own Mac. Nothing is uploaded, no account is created, and
 your profile, your CV and your results never leave the machine.
@@ -20,6 +20,18 @@ your profile, your CV and your results never leave the machine.
 ├── Run search now…
 └── Quit
 ```
+
+The indicator lives in `menubar/` as a **section** of
+[MacBar](https://github.com/ainahtokyandry/mac-setup), which shows several small
+tools behind one menu bar item rather than one each:
+
+```
+⌾ 118 GB · 42·61·18% · ◷ Sun 08:00
+```
+
+If you use MacBar, it picks this section up from this checkout and there is nothing
+to install here — say no to question 4 of `./setup.sh`. The indicator can still be
+built as a menu bar app of its own; see [`menubar/`](menubar) below.
 
 ## Why
 
@@ -39,8 +51,10 @@ any board that was unreachable.
 - macOS (the scheduler uses `launchd`)
 - [Claude Code](https://claude.com/claude-code) installed and signed in — the CLI
   does the searching, so an active subscription or API access is needed
-- Xcode Command Line Tools, only for the optional menu bar app
-  (`xcode-select --install`)
+- Xcode Command Line Tools, only for the menu bar section
+  (`xcode-select --install`), plus a checkout of
+  [mac-setup](https://github.com/ainahtokyandry/mac-setup), which holds the host it
+  is built against. The search itself needs neither.
 
 ## Install
 
@@ -65,7 +79,9 @@ accept with Return:
    the French-speaking market, and Malagasy job boards, in French or English.
    Unless that happens to describe you, pick one of the other three.
 3. **Whether to install the background agent** that runs the searches.
-4. **Whether to install the menu bar indicator.**
+4. **Whether to install a menu bar indicator of its own.** Say no if you use
+   MacBar, which already shows this as one of its sections; saying yes gives you a
+   second item in the menu bar.
 
 Re-run `./setup.sh` whenever you want to change any of it; it offers your current
 settings as the new defaults.
@@ -132,9 +148,16 @@ prompt-template.md    the instructions sent to the agent, minus your profile
 profile.default.md    the shipped default profile, copied to profile.md
 config.example.env    every setting, documented
 lib/config.zsh        config loading and schedule maths, shared by the scripts
-menubar/              the menu bar app and its build script
+menubar/              the menu bar section: one MacBar BarSection, a standalone
+                      entry point, and a build script for the standalone app
 uninstall.sh          removes the agents and the app
 ```
+
+`menubar/` holds no copy of the host it is written against — MacBar's
+`Support.swift` defines the protocol, the colours and the formatting, and
+`menubar/build.sh` compiles against a checkout of it found in `MACBAR_HOST`, beside
+this repository, or under `$HOME/Projects`. One definition of the contract means
+the section cannot drift away from the app that hosts it.
 
 ## Privacy
 

@@ -49,6 +49,21 @@ React, Next.js, Node.js, NestJS, React Native, Vue, Angular, Express and similar
      it stays blocked, say so and move on — do not spend more than a few minutes
      on it.
 4. **Freelance / contract** — Arc.dev, Upwork public pages, Contra.
+5. **LinkedIn posts** — recruiter and founder "we're hiring" / "on recrute" posts,
+   which often never become a formal job listing. The feed needs a login, so reach
+   only public posts through WebSearch. Cover worldwide remote posts as well as
+   Madagascar ones, e.g.
+   `site:linkedin.com/posts hiring (React OR Node.js OR TypeScript) ("remote worldwide" OR "fully remote" OR "work from anywhere" OR contractor)`,
+   `site:linkedin.com/posts ("on recrute" OR "nous recrutons") (React OR Node.js OR TypeScript) (télétravail OR "full remote")`,
+   `site:linkedin.com/posts (recrute OR hiring) développeur (Madagascar OR Antananarivo)`;
+   vary the stack and location terms. Apply the same eligibility rules as for
+   listings: a remote post outside Madagascar must be open to a candidate working
+   from there, so flag "eligibility unclear" when the post doesn't say. Posts
+   rarely carry a reliable date or application link: link the post itself, give
+   the date only if the post or search snippet shows one (otherwise flag "date
+   unverified"), and say how to apply (email, DM, external link) when the post
+   states it. Skip posts that just reshare an already-reported listing. List
+   them in their own "LinkedIn posts" group in the report.
 
 ## Sources to never use
 

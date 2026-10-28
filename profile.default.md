@@ -26,8 +26,7 @@ React, Next.js, Node.js, NestJS, React Native, Vue, Angular, Express and similar
 
 ## Sources to sweep
 
-1. **Remote worldwide boards** — RemoteOK, Remotive, Wellfound, Arc.dev,
-   web3.career.
+1. **Remote worldwide boards** — Remotive, Wellfound, Arc.dev, web3.career.
 2. **French-speaking market** — Welcome to the Jungle, LinkedIn public listings,
    free-work.com, ChooseYourBoss. Full-remote roles only; flag listings that
    likely require French payroll or French freelance status.
@@ -68,5 +67,5 @@ React, Next.js, Node.js, NestJS, React Native, Vue, Angular, Express and similar
 ## Sources to never use
 
 Himalayas and WeWorkRemotely (paywalled), Codeur.com (no credits), Malt and
-Lemon.io (not usable from Madagascar), Freelancer.com (bidding model not wanted).
-Never search or cite these.
+Lemon.io (not usable from Madagascar), Freelancer.com (bidding model not wanted),
+RemoteOK (not wanted). Never search or cite these.
